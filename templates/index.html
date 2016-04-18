@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% include 'partials/head.html' %}
+
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+{% include 'partials/navigation.html' %}
+
+<div class="jumbotron text-center">
+  <h1>Sprvn Strat</h1> 
+  <p>Change the game</p> 
+  <form class="form-inline">
+    <!-- <input type="email" class="form-control" size="50" placeholder="Party ID" required> -->
+    <button type="button" class="btn btn-primary">Create party</button>
+  </form>
+</div>
+
+<!-- Container (Party Section) -->
+<div id="party" class="container-fluid text-center">
+  <h2>PARTY</h2>
+
+  {% if partyid %}
+
+    <h4>PartyID: {{ partyid }}</h4>
+    <h5>Nick: {{ nick }}</h5>
+
+    {% if yo %}
+
+    <h5>{{ yo }}</h5>
+
+    {% endif %}
+
+  {% else %}
+
+    {% include 'partials/joinParty.html' %}
+
+  {% endif %}
+
+  <br>
+</div>
+
+{% include 'partials/concept.html' %}
+
+{% include 'partials/pricing.html' %}
+
+{% include 'partials/about.html' %}
+
+{% include 'partials/contact.html' %}
+
+{% include 'partials/footer.html' %}
+
+</body>
+</html>
+
