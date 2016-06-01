@@ -178,3 +178,14 @@ body {
         font-size: 150px;
     }
   }
+
+  .summerImage {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  @media (min-width: 1200px) {
+  .container {
+    width: 1600px;
+  }
+}

@@ -17,13 +17,32 @@
 </div>
 
 <!-- Container (Party Section) -->
-<div id="party" class="container-fluid text-center">
+<div id="party" class="container col-l-12 text-center">
   <h2>PARTY</h2>
 
   {% if partyid %}
 
     <h4>PartyID: {{ partyid }}</h4>
     <h5>Nick: {{ nick }}</h5>
+
+    <div id="party" class="container">
+      <div class="row text-centered">
+      <div class="row text-center col-sm-12">
+        <img src="http://ddragon.leagueoflegends.com/cdn/img/champion/loading/{{ sumImage }}_0.jpg">
+
+        <img src="http://ddragon.leagueoflegends.com/cdn/img/champion/loading/{{ sumImage }}_0.jpg">
+
+        <img src="http://ddragon.leagueoflegends.com/cdn/img/champion/loading/{{ sumImage }}_0.jpg">
+
+        <img src="http://ddragon.leagueoflegends.com/cdn/img/champion/loading/{{ sumImage }}_0.jpg">
+
+        <img src="http://ddragon.leagueoflegends.com/cdn/img/champion/loading/{{ sumImage }}_0.jpg">
+      </div>
+      </div>
+    </div>
+
+    <h5>{{ sumImage }}</h5>
+
 
     {% if yo %}
 

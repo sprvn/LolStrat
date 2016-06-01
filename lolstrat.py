@@ -1,17 +1,31 @@
 from flask import Flask, render_template, redirect, request, session
+from flaskext.mysql import MySQL
+
 app = Flask(__name__)
 app.debug = True
+app.config['MYSQL_DATABASE_USER'] = ''
+app.config['MYSQL_DATABASE_PASSWORD'] = ''
+app.config['MYSQL_DATABASE_DB'] = ''
+app.config['MYSQL_DATABASE_HOST'] = ''
+mysql = MySQL()
+mysql.init_app(app)
 
 #Route to index and show party
 @app.route('/')
 @app.route('/party/<partyid>')
 def index(partyid=None):
 	yo = None
-	if session.get('yo'):
-		yo = session['yo']
+	if session.get('nick'):
+		cursor = mysql.connect().cursor()
+		cursor.execute("select riotID from summoners where summonerName='" + session['nick'] + "'")
+		sumID = cursor.fetchone()
+		sumID = sumID[0]
+		cursor.execute("select name from champions where id=17");
+		sumImage = cursor.fetchone()
+		sumImage = sumImage[0]
 	else:
-		yo = None
-	return render_template("index.html", partyid=partyid, nick=session['nick'], yo=yo)
+		sumImage = None
+	return render_template("index.html", partyid=partyid, nick=session['nick'], sumImage=sumImage)
 
 #Handle quick join form
 @app.route('/party/', methods=['POST'])
