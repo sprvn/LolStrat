@@ -108,6 +108,17 @@ body {
       background-color: #22313F;
       color: #fff;
   }
+
+  .form-inline .btn {
+      line-height: 14px;  
+      text-align: center;
+      vertical-align: middle;
+      font-size: 15px;
+      background-color: #22313F;
+      color: #fff;
+      box-sizing: border-box;
+  }
+
   .navbar {
       margin-bottom: 0;
       background-color: #22313F;

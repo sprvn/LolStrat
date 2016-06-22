@@ -25,10 +25,6 @@ mysql.init_app(app)
 @app.route('/')
 @app.route('/party/<partyid>')
 def index(partyid=None):
-	yo = 'None'
-	if session['nick'] == '':
-		print "yoyoyoyoy"
-	print "Session: %s" % session['nick']
 	if session.get('nick'):
 		try:
 			cursor = mysql.connect().cursor()
@@ -36,11 +32,11 @@ def index(partyid=None):
 			sumID = cursor.fetchone()
 			if sumID:
 				sumID = sumID[0]
-			cursor.execute("select name from champions where id=17");
+			cursor.execute("select name from champions where id=14");
 			sumImage = cursor.fetchone()
 			sumImage = sumImage[0]
 		finally:
-			print "asd"
+			print sumID
 	else:
 		sumImage = None
 	return render_template("index.html", partyid=partyid, nick=session['nick'], sumImage=sumImage)
@@ -50,7 +46,7 @@ def index(partyid=None):
 def party():
 	session['nick'] = request.form['nick']
 	session['partyid'] = request.form['partyid']
-	session['yo'] = ''
+	session['role'] = request.form['role']
 	#return render_template("index.html", partyid=partyid)
 	return redirect("/party/%s" % request.form['partyid'], code=302)
 

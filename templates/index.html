@@ -3,17 +3,13 @@
 
 {% include 'partials/head.html' %}
 
-<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+<body id="home" data-spy="scroll" data-target=".navbar" data-offset="60">
 
 {% include 'partials/navigation.html' %}
 
 <div class="jumbotron text-center">
-  <h1>Sprvn Strat</h1> 
+  <h1>League of Legend Strat</h1> 
   <p>Change the game</p> 
-  <form class="form-inline">
-    <!-- <input type="email" class="form-control" size="50" placeholder="Party ID" required> -->
-    <button type="button" class="btn btn-primary">Create party</button>
-  </form>
 </div>
 
 <!-- Container (Party Section) -->
@@ -28,15 +24,26 @@
     <div id="party" class="container">
       <div class="row text-centered">
       <div class="row text-center col-sm-12">
-        <img src="http://ddragon.leagueoflegends.com/cdn/img/champion/loading/{{ sumImage }}_0.jpg">
-
-        <img src="http://ddragon.leagueoflegends.com/cdn/img/champion/loading/{{ sumImage }}_0.jpg">
-
-        <img src="http://ddragon.leagueoflegends.com/cdn/img/champion/loading/{{ sumImage }}_0.jpg">
-
-        <img src="http://ddragon.leagueoflegends.com/cdn/img/champion/loading/{{ sumImage }}_0.jpg">
-
-        <img src="http://ddragon.leagueoflegends.com/cdn/img/champion/loading/{{ sumImage }}_0.jpg">
+        
+        <table border="0">
+        <center>
+        <tr>
+          <td> <img src="http://ddragon.leagueoflegends.com/cdn/img/champion/loading/{{ sumImage }}_0.jpg"></td>
+          <td> <img src="http://ddragon.leagueoflegends.com/cdn/img/champion/loading/{{ sumImage }}_0.jpg"></td>
+          <td> <img src="http://ddragon.leagueoflegends.com/cdn/img/champion/loading/{{ sumImage }}_0.jpg"></td>
+          <td> <img src="http://ddragon.leagueoflegends.com/cdn/img/champion/loading/{{ sumImage }}_0.jpg"></td>
+          <td><img src="http://ddragon.leagueoflegends.com/cdn/img/champion/loading/{{ sumImage }}_0.jpg"></td>   
+        </tr>
+        <tr>
+        <!-- Nickname under images, all images at the moment-->
+         <td>{{ nick }}</td>
+         <td>{{ nick }}</td>
+         <td>{{ nick }}</td>
+         <td>{{ nick }}</td>
+         <td>{{ nick }}</td>
+        </tr>
+        </center>
+        </table> 
       </div>
       </div>
     </div>

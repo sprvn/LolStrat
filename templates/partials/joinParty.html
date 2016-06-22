@@ -2,5 +2,15 @@
 <form class="form-inline" action="/party/" method="post">
 	<input type="text" name="nick" class="form-control" size="25" placeholder="Nickname" required>
 	<input type="text" name="partyid" class="form-control" size="25" placeholder="Party ID" required>
-	<input type="submit" value="Quick join" class="btn btn-primary"></input>
+	<!-- Roles from https://wizzley.com/league-of-legends-champion-roles/ -->
+	<select name="role" class="form-control"> 
+		<option>Role</option>
+		<option>Carry</option>
+		<option>Mage</option>
+		<option>Solo Top</option>
+		<option>Tank</option>
+		<option>Support</option>
+		<option>Jungle</option>
+	</select>
+	<input type="submit" value="Quick join" class="btn btn-lg" ></input>
 </form>
